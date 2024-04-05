@@ -3,9 +3,6 @@
     <div class="flex flex-col space-y-2">
       <!-- Messages go here -->
       <ChatBubble v-for="message in messages" :key="message.id" v-bind="message" />
-      <!-- :its-mine="message.itsMine"
-        :message="message.message"
-        :image="message.image" -->
     </div>
   </div>
 </template>
@@ -19,11 +16,12 @@ interface Props {
   messages: ChatMessage[];
 }
 
-const { messages } = defineProps<Props>();
+const props = defineProps<Props>();
 
 const chatRef = ref<HTMLDivElement | null>(null);
 
-watch(messages, () => {
+watch(props, () => {
+  console.log('se disparó el update de messages');
   setTimeout(() => {
     chatRef.value?.scrollTo({
       top: chatRef.value.scrollHeight,
