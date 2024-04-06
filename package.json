@@ -10,6 +10,7 @@
     "build-only": "vite build",
     "test:unit": "vitest",
     "test": "vitest --watch=false",
+    "coverage": "vitest run --coverage",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
@@ -25,6 +26,7 @@
     "@types/node": "^20.11.28",
     "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-v8": "^1.4.0",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/test-utils": "^2.4.5",
